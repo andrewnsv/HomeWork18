@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="res">
+          <p class="name">Selected: <span></span></p>
+          <div class="wrap-for-btn">
+            <button class="prev" disabled></button>
+            <p class="curr-page"></p>
+            <button class="next"></button>
+          </div>
+          <button id="restore-btn">Reset all</button>
+        </div>
+        <div class="wrapper-filter">
+          <div class="items-for-search">
+            <div class="form">
+              <input id="search-input" text="text" />
+              <input type="radio" id="alive" name="status" value="Alive" />
+              <label for="alive">Alive</label>
+              <input type="radio" id="dead" name="status" value="Dead" />
+              <label for="dead">Dead</label>
+              <input type="radio" id="unknown"  name="status" value="unknown" />
+              <label for="unknown">Unknown</label>
+            </div>
+            <button id="search">Search</button>
+          </div>
+        </div>
+      </div>
+      <ul id="output"></ul>
+      <div class="overlay"></div>
+      <div id="modal">
+        <div class="modal-content">
+
+        </div>
+        <button id="close-modal">Close</button>
+      </div>
+    </div>
+  </body>
+</html>

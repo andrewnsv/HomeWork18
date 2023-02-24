@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("https://img5.goodfon.ru/wallpaper/nbig/3/4d/vinda-rik-rick-windows-10-rick-and-morty-rik-i-morti-morti-r.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  max-width: 1300px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+
+  .wrapper {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+
+    .res {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      width: 100%;
+      height: 75px;
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid #000;
+      border-radius: 0 0 15px 15px;
+      font-size: 24px;
+      .name {
+        width: 300px;
+      }
+      button {
+        width: 200px;
+        height: 35px;
+        border-radius: 15px;
+        cursor: pointer;
+        &:hover {
+          background: rgba(7, 248, 80, 0.5);
+          color: white;
+        }
+      }
+
+      .wrap-for-btn {
+        display: flex;
+        align-items: center;
+
+        .prev {
+          margin-right: 20px;
+          width: 50px;
+          height: 50px;
+          position: relative;
+          &::after {
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 2px;
+            background-color: #000;
+            position: absolute;
+            top: 17px;
+            left: calc(50% - 8px);
+            transform: rotate(-35deg);
+          }
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 2px;
+            position: absolute;
+            top: 25px;
+            right: calc(50% - 7px);
+            transform: rotate(38deg);
+            background-color: #000;
+          }
+        }
+        .next {
+          margin-left: 20px;
+          width: 50px;
+          height: 50px;
+          position: relative;
+
+          &::after {
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 2px;
+            background-color: #000;
+            position: absolute;
+            top: 17px;
+            right: calc(50% - 8px);
+            transform: rotate(35deg);
+          }
+
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 2px;
+            position: absolute;
+            top: 25px;
+            left: calc(50% - 7px);
+            transform: rotate(-38deg);
+            background-color: #000;
+          }
+        }
+      }
+    }
+
+    .wrapper-filter {
+      position: relative;
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .items-for-search {
+        width: 100%;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: space-between;
+        border-radius: 0 0 15px 15px;
+        align-items: center;
+        .form{
+          width: 43%;
+          display: flex;
+          justify-content: space-between;
+          #search-input {
+            width: 200px;
+            height: 30px;
+            border-radius: 15px;
+            padding: 0 15px;
+            outline: none;
+          }
+        }
+        #search {
+          width: 200px;
+          height: 35px;
+          border-radius: 15px;
+          cursor: pointer;
+          &:hover {
+            background: rgba(7, 248, 80, 0.5);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    width: 75%;
+    opacity: 1;
+
+    li {
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 0;
+      width: 100%;
+      border-radius: 15px;
+      border: 1px solid #fff;
+      padding: 5px;
+      cursor: pointer;
+
+      &.active {
+        border: 2px solid red;
+        background: rgb(0, 0, 0);
+      }
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.6);
+      }
+
+      img {
+        width: 175px;
+        height: 175px;
+        margin-right: 10px;
+        border-radius: 15px;
+      }
+
+      .wrap-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .name-content {
+          display: flex;
+          align-content: center;
+          flex-direction: column;
+          width: 33%;
+          text-align: center;
+        }
+
+        button {
+          margin: -100px;
+          height: 35px;
+          width: 170px;
+          transform: rotate(90deg);
+          border-radius: 15px;
+          font-size: 15px;
+          cursor: pointer;
+          &:hover {
+            background: rgba(7, 248, 80, 0.5);
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99;
+    transition: all 1s ease-in-out;
+  }
+
+  #modal {
+    width: 450px;
+    height: 450px;
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    transition: all 1s ease-in-out;
+    .modal-content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h5{
+        color: #000;
+        font-size: 23px;
+      }
+      p{
+        color: #000;
+        font-size: 23px;
+      }
+    }
+    button{
+      margin-top: 15px;
+      text-align: center;
+      width: 200px;
+      height: 40px;
+      padding: 10px;
+    }
+  }
+}
